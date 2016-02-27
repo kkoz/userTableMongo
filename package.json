@@ -1,0 +1,24 @@
+{
+  "name": "oauthTest",
+  "version": "1.0.0",
+  "description": "Testing out OAuth interfaces",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+      "express" : "latest",
+      "body-parser" : "latest",
+      "jade" : "latest",
+      "morgan" : "latest",
+      "compression" : "latest",
+      "method-override" : "latest",
+      "express-session" : "latest",
+      "session-file-store" : "latest",
+      "socket.io" : "latest",
+      "request" : "latest",
+      "urijs" : "latest"
+  },
+  "author": "Kevin Kozlowski",
+  "license": "ISC"
+}
