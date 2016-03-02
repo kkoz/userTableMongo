@@ -14,7 +14,6 @@ module.exports = function(app, io)
     });
     
     app.post("/createAccount", function(req, res){
-        console.log(req.body);
         var username = req.body["username"];
         var password = req.body["password"];
         var callback = function(rc){
@@ -30,6 +29,20 @@ module.exports = function(app, io)
                 res.render("createAcct.jade");
             }
         };
-        var rc = userTable.addUser(username, password, callback);
+        userTable.addUser(username, password, callback);
+    });
+    
+    app.post("/login", function(req, res){
+        var username = req.body["username"];
+        var password = req.body["password"];
+        var callback = function(rc){
+            if(rc === 0){
+                res.render("loginSuccess.jade");
+            }
+            else{
+                res.render("loginFailure.jade");
+            }
+        };
+        userTable.loginUser(username, password, callback);
     });
 };

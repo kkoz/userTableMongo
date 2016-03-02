@@ -1,5 +1,5 @@
 {
-  "name": "oauthTest",
+  "name": "userTableMongo",
   "version": "1.0.0",
   "description": "Testing out OAuth interfaces",
   "main": "server.js",
@@ -18,7 +18,8 @@
       "session-file-store" : "latest",
       "socket.io" : "latest",
       "request" : "latest",
-      "urijs" : "latest"
+      "urijs" : "latest",
+      "password-hash-and-salt" : "latest"
   },
   "author": "Kevin Kozlowski",
   "license": "ISC"
