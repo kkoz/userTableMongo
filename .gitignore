@@ -39,6 +39,7 @@ Thumbs.db
 # Vim #
 #######
 *.swp
+*.swo
 
 # Node #
 ########

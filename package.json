@@ -10,6 +10,7 @@
       "express" : "latest",
       "body-parser" : "latest",
       "jade" : "latest",
+      "mongoose" : "latest",
       "morgan" : "latest",
       "compression" : "latest",
       "method-override" : "latest",

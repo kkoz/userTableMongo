@@ -8,10 +8,19 @@ html
     body
         p Welcome to Mongo User Table!
         div#loginStuff
-            p Login!
-            label(for="loginInput") Username:
-            input#loginInput(type="text")
+            form(action="/login", mehtod="post")
+                p Login!
+                div#usernameEntry
+                    label(for="loginInput") Username:
+                    input#loginInput(type="text")
+                div#passwordEntry
+                    label(for="passwordInput") Password:
+                    input#passwordInput(type="text")
+                button#loginBtn(action="submit") Login
+
+            
         div#createAccountStuff
-            p Don't have an account yet?
-            button#createAcctBtn Create Account
+            form(action="/newAccount" method="get")
+                p Don't have an account yet?
+                button(type="submit")#createAcctBtn Create Account
 

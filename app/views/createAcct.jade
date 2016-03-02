@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title Create New Account
+    body
+        form(action="/createAccount", method="post")
+            div#submitStuff
+                div#usernameStuff
+                    label(for="usernameInput") Username
+                    input#usernameInput(type="text", name="username")
+                div#passwordStuff
+                    label(for="passwordInput") Password
+                    input#passwordInput(type="text", name="password")
+                div#submitButtonStuff
+                    button#submitBtn(type="submit") Create Account
