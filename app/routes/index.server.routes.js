@@ -29,7 +29,8 @@ module.exports = function(app, io)
                 res.render("createAcct.jade");
             }
         };
-        userTable.addUser(username, password, callback);
+        userTable.addUser({username : username,
+            password : password}, callback);
     });
     
     app.post("/login", function(req, res){
@@ -43,6 +44,7 @@ module.exports = function(app, io)
                 res.render("loginFailure.jade");
             }
         };
-        userTable.loginUser(username, password, callback);
+        userTable.loginUser({username : username,
+            password : password}, callback);
     });
 };

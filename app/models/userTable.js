@@ -20,12 +20,13 @@ db.once("open",function(callback){
 
 });
 
-exports.addUser = function(username, password, callback)
+exports.addUser = function(args, callback)
 {
     if(!connected){
         return;
     }
-    
+    var username = args.username;
+    var password = args.password;
     passHash(password).hash(function(error, hash){
         if(error){
             throw new Error("Something went wrong!");
@@ -64,11 +65,13 @@ exports.addUser = function(username, password, callback)
     });
 };
 
-exports.loginUser = function(username, password, callback)
+exports.loginUser = function(args, callback)
 {
     if(!connected){
         return;
     }
+    var username = args.username;
+    var password = args.password;
     User.find({"username" : username}).
         select("password").
         exec(function(err, users){
@@ -110,10 +113,18 @@ exports.findAllUsers = function()
     });
 }
 
-exports.findByUsername = function(username)
+exports.findByUsername = function(args, callback)
 {
     if(!connected){
         return;
     }
+    User.find({username : args.username}).
+        exec(function(err, users){
+            if(err){
+                console.error(err);
+                throw new Error(JSON.stringify(err));
+            }
+            callback(rc, users);
+        });
 };
 
